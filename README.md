@@ -6,7 +6,19 @@ A production-grade orchestration platform that dynamically routes user prompts a
 
 ![multillmgif](https://github.com/user-attachments/assets/0084d117-0721-4c09-8a9d-a0437e2fbaa6)
 
+🚀 Project in Simple Terms
 
+Using one LLM (like OpenAI) for everything is expensive and wastes cost.
+
+Using only local models saves money but loses accuracy on complex tasks.
+
+Different prompts need different models based on difficulty, speed, and quality.
+
+So I built a router that automatically chooses the best LLM for each query.
+
+The system benchmarks multiple models, scores their responses, and selects the best output.
+
+This creates a cost-efficient, high-accuracy, production-ready multi-LLM platform.
 ## 🚀 Live System Capabilities
 
 * 🔀 Intelligent prompt routing
