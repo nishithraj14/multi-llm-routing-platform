@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LLM Routing Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🧠 Multi-LLM Routing Dashboard</h1>
+        <p>Dynamic model orchestration with evaluation & cost optimization</p>
+    </div>
+
+    <div class="card">
+
+        <form action="/run" method="post">
+
+            <label>Prompt</label>
+            <textarea name="prompt" placeholder="Ask anything..." required></textarea>
+
+            <label>Priority</label>
+            <select name="priority">
+                <option value="balanced">Balanced</option>
+                <option value="quality">Quality</option>
+                <option value="speed">Speed</option>
+            </select>
+
+            <div style="margin-top:10px;">
+                <input type="checkbox" name="benchmark">
+                <span>Enable Benchmark Mode</span>
+            </div>
+
+            <button type="submit">🚀 Run Routing</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

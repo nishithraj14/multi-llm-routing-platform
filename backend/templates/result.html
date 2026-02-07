@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Routing Result</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🚀 Routing Result</h1>
+    </div>
+
+    <!-- Selected Model -->
+    <div class="card">
+        <h2>Selected Model:
+            <span class="badge">{{ selected_model }}</span>
+        </h2>
+    </div>
+
+    <!-- Metrics -->
+    <div class="metrics">
+
+        <div class="metric-box">
+            <h3>Latency</h3>
+            <p>{{ metrics.latency }} sec</p>
+        </div>
+
+        <div class="metric-box">
+            <h3>Cost</h3>
+            <p>${{ metrics.cost }}</p>
+        </div>
+
+        <div class="metric-box">
+            <h3>Score</h3>
+            <p>{{ metrics.score }}/10</p>
+        </div>
+
+    </div>
+
+    <!-- Response -->
+    <div class="card">
+        <h2>Model Response</h2>
+        <div class="response-box">
+            {{ response }}
+        </div>
+    </div>
+
+
+    {% if benchmark %}
+
+    <div class="card">
+
+        <h2>📊 Benchmark Comparison</h2>
+
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Latency</th>
+                <th>Cost</th>
+                <th>Score</th>
+            </tr>
+
+            {% for r in benchmark_results %}
+            <tr>
+                <td>{{ r.model }}</td>
+                <td>{{ r.latency }}</td>
+                <td>{{ r.cost }}</td>
+                <td>{{ r.score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    {% endif %}
+
+    <div style="margin-top:30px;">
+        <a href="/" style="color:white;">⬅ Run Another Prompt</a>
+    </div>
+
+</div>
+
+</body>
+</html>
